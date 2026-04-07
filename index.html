@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -19,12 +19,19 @@
     <div class="page-wrapper">
       <!------- Header / Branding ------->
       <header class="site-header">
-        <h1 class="site-title">Smart Product Advisor</h1>
+        <img src="img/loreal-logo.png" alt="L'Oréal logo" class="brand-logo" />
+        <div>
+          <p class="brand-subtitle">L’Oréal Beauty Assistant</p>
+          <h1 class="site-title">Product & Routine Advisor</h1>
+        </div>
       </header>
 
       <!------- Chat Area ------->
       <main>
         <section class="chatbox">
+          <div id="latestQuestion" class="latest-question" aria-live="polite">
+            Ask a question about L’Oréal products or routines to get started.
+          </div>
           <div id="chatWindow" class="chat-window">
             <!-- messages will be appended here via JS -->
           </div>
@@ -35,13 +42,12 @@
               id="userInput"
               name="userInput"
               type="text"
-              placeholder="Ask me about products or routines…"
+              placeholder="Ask about L’Oréal products, routines, or recommendations…"
               autocomplete="off"
               required
             />
-            <button type="submit" id="sendBtn">
+            <button type="submit" id="sendBtn" aria-label="Send message">
               <span class="material-icons">send</span>
-              <span class="visually-hidden">Send</span>
             </button>
           </form>
         </section>
@@ -49,9 +55,8 @@
 
       <!------- Footer Links ------->
       <footer class="site-footer">
-        <p>&copy; 2025 Company Name. All rights reserved.</p>
+        <p>&copy; 2025 L’Oréal. All rights reserved.</p>
         <nav>
-          <!-- These URLs are placeholders -->
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
           <a href="#">Contact</a>
@@ -59,8 +64,6 @@
       </footer>
     </div>
 
-    <!-- secrets.js can be removed when using Cloudflare Workers for API requests -->
-    <script src="secrets.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
